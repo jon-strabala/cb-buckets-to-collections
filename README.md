@@ -19,6 +19,8 @@ Execute the generator script, this just makes two files.
 ./CustomConvertBucketToCollections.pl
 ```
 
+The script just asks 8 or 9 then builds our Eventing Functions (plus a setup of script to make sure the target collections exist).
+
 ```
 Enter the bucket (or source) to convert to collections      [travel-sample]:
 Enter the username:password to your cluster                 [admin:jtester]:
@@ -43,7 +45,7 @@ Generating Eventing Function: CustomConvertBucketToCollections.json
 Generating Keyspace commands: MakeCustomKeyspaces.sh
 ```
 
-Where there are two outputs:
+Where there are two output files are :
 * CustomConvertBucketToCollections.json
 * MakeCustomKeyspaces.sh
 
@@ -97,7 +99,7 @@ sh ./MakeCustomKeyspaces.sh
 ```
 ## Step 5: 
 
-Refresh your browser to see the Eventing Function "CustomConvertBucketToCollections" in the Couchbase server UI then view function settings, adjust the the constants 
+Refresh your browser to see the Eventing Function "CustomConvertBucketToCollections" in the Couchbase server UI then view function settings, adjust the the constant alias bindings (at the bototm of the screen). 
 
 * DO_COPY 
 
