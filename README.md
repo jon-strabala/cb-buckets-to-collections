@@ -7,7 +7,7 @@ Tool (perl script) and template to convert bucket based data into collections
 Ii is assumed that you have a basic understanding of Couchbase Eventing and have the following environment:
 
 * The `travel-sample` data set loaded in a Couchbase cluster with a version greater than or equal to 7.0.0
-* The `perl` scripting utilitiu installed
+* The `perl` scripting utilities installed
 * The JSON tool `jq` installed
 * Your path includes `/opt/couchbase/bin` as well as the location for both `perl` and `jq`.
 
@@ -51,7 +51,7 @@ Where there are two output files are :
 
 The first file  _CustomConvertBucketToCollections.json_ is a complete Eventing Function which can be run to move your data form a bucket to a set of collections based on the property "type" this file can be imported into your Eventing Service in your Couchbase cluster.
 
-The second file _MakeCustomKeyspaces.sh_ is a shell script that can be run to setup the Eventing Storage (or eventing metadata) and also all the target collections.
+The second file _MakeCustomKeyspaces.sh_ is a shell script that can be run to setup the Eventing Storage (or Eventing metadata) and also all the target collections.
 
 ## Step 2:
 
@@ -99,7 +99,7 @@ sh ./MakeCustomKeyspaces.sh
 ```
 ## Step 5: 
 
-Refresh your browser to see the Eventing Function "CustomConvertBucketToCollections" in the Couchbase server UI then view function settings, adjust the the constant alias bindings (at the bototm of the screen). 
+Refresh your browser to see the Eventing Function "CustomConvertBucketToCollections" in the Couchbase server UI then view function settings, adjust the constant alias bindings (at the bottom of the pop-up). 
 
 * DO_COPY 
 
@@ -115,7 +115,7 @@ If `true` will remove the property "type" form the document copied to the target
 
 ## Step 6: 
 
-Deploy the Eventing Function "CustomConvertBucketToCollections" 
+Deploy the Eventing Function "CustomConvertBucketToCollections" to perform the needed reorganization action(s).
 
-Wait until it is complete (the rate graph shold go to zero) then Undeploy the Function.
+Now Wait until it is complete (the rate graph if expanded should go to zero) then Undeploy the Function.
 
