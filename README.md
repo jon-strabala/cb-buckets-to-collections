@@ -63,13 +63,15 @@ cat MakeCustomKeyspaces.sh
 ```
 # SAMPLE: Eventing Storage
 
-couchbase-cli bucket-create -c localhost:8091 -u admin -p jtester --bucket=rr100 --bucket-type=couchbase --bucket-eviction-policy fullEviction --bucket-ramsize=100 --bucket-replica=0 --enable-flush=1 --wait
+couchbase-cli bucket-create -c localhost:8091 -u admin -p jtester --bucket=rr100 --bucket-type=couchbase \
+        --bucket-eviction-policy fullEviction --bucket-ramsize=100 --bucket-replica=0 --enable-flush=1 --wait
 couchbase-cli collection-manage --create-scope eventing --bucket rr100 -u admin -p jtester -c localhost:8091
 couchbase-cli collection-manage --create-collection eventing.metadata --bucket rr100 -u admin -p jtester -c localhost:8091
 
 # SAMPLE: Target bucket.scope.collections
 
-couchbase-cli bucket-create -c localhost:8091 -u admin -p jtester --bucket=mybucket --bucket-type=couchbase --bucket-eviction-policy fullEviction --bucket-ramsize=100 --bucket-replica=0 --enable-flush=1 --wait
+couchbase-cli bucket-create -c localhost:8091 -u admin -p jtester --bucket=mybucket --bucket-type=couchbase \
+        --bucket-eviction-policy fullEviction --bucket-ramsize=100 --bucket-replica=0 --enable-flush=1 --wait
 couchbase-cli collection-manage --create-scope myscope --bucket mybucket -u admin -p jtester -c localhost:8091
 couchbase-cli collection-manage --create-collection myscope.airline --bucket mybucket -u admin -p jtester -c localhost:8091
 couchbase-cli collection-manage --create-collection myscope.airport --bucket mybucket -u admin -p jtester -c localhost:8091
@@ -79,7 +81,9 @@ couchbase-cli collection-manage --create-collection myscope.route --bucket mybuc
 
 # IMPORT THE FUNCTION (must not exist)
 
-couchbase-cli eventing-function-setup -c  localhost:8091 -u admin -p
+couchbase-cli eventing-function-setup -c  localhost:8091 -u admin -p jtester \
+        --import --name CustomConvertBucketToCollections --file CustomConvertBucketToCollections.json
+
 ```
 
 ## Step 3:
