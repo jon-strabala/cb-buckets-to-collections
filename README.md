@@ -1,6 +1,13 @@
 # cb-buckets-to-collections
 Tool (perl script) and template to convert bucket based data into collections
 
+Example of performance using this technique:
+* Test cluster a symmetric 3 x AWS r5.2xlarge (64 GiB of memory, 8 vCPUs, 64-bit platform) 
+* Will process 93K ops/sec. in a steady state.
+* 250M small documents: time 44 minutes to reorganize a bucket with 80 types into a new bucket with 80 collections.
+* 1B small documents: time 3 hours to reorganize a bucket with 80 types into a new bucket with 80 collections.
+
+Note a large cluster should be able to hit 1.1M ops/sec. refer to http://showfast.sc.couchbase.com/#/timeline/Linux/eventing/scaling/Function
 
 ## Example
 
