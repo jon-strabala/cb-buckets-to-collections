@@ -56,7 +56,7 @@ Where there are two output files are :
 * CustomConvertBucketToCollections.json
 * MakeCustomKeyspaces.sh
 
-The first file  _CustomConvertBucketToCollections.json_ is a complete Eventing Function which can be run to move your data form a bucket to a set of collections based on the property "type" this file can be imported into your Eventing Service in your Couchbase cluster.
+The first file  _CustomConvertBucketToCollections.json_ is a complete Eventing Function which can be run to move your data from a bucket to a set of collections based on the property "type" this file can be imported into your Eventing Service in your Couchbase cluster.
 
 The second file _MakeCustomKeyspaces.sh_ is a shell script that can be run to setup the Eventing Storage (or Eventing metadata) and also all the target collections.
 
