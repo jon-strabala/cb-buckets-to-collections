@@ -9,6 +9,8 @@ Example of performance using this technique:
 
 Note a large cluster should be able to hit 1.1M ops/sec. refer to http://showfast.sc.couchbase.com/#/timeline/Linux/eventing/scaling/Function
 
+If you want to do larger tests then the basic example below the utility *big_data_test_load.sh* (which calls *big_data_test_gen.pl*) can be used to generate very large test sets and load the documents into a Couchbase bucket.
+
 ## Example
 
 Ii is assumed that you have a basic understanding of Couchbase Eventing and have the following environment:
@@ -129,4 +131,3 @@ If `true` will remove the property "type" form the document copied to the target
 Deploy the Eventing Function "CustomConvertBucketToCollections" to perform the needed reorganization action(s).
 
 Now Wait until it is complete (the rate graph if expanded should go to zero) then Undeploy the Function.
-
